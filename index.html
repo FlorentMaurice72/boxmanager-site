@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="BoxManager — Gérez vos espaces de stockage simplement et efficacement." />
+  <title>BoxManager — Gestion de box en toute simplicité</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --brand: #2563eb;
+      --brand-dark: #1d4ed8;
+      --text: #111827;
+      --muted: #6b7280;
+      --bg: #f9fafb;
+      --white: #ffffff;
+      --radius: 12px;
+    }
+
+    body {
+      font-family: 'Segoe UI', system-ui, sans-serif;
+      color: var(--text);
+      background: var(--white);
+      line-height: 1.6;
+    }
+
+    /* NAV */
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.25rem 2rem;
+      border-bottom: 1px solid #e5e7eb;
+      background: var(--white);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .logo { font-size: 1.4rem; font-weight: 700; color: var(--brand); text-decoration: none; }
+    .nav-cta {
+      background: var(--brand);
+      color: var(--white);
+      padding: .55rem 1.25rem;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: .95rem;
+      transition: background .2s;
+    }
+    .nav-cta:hover { background: var(--brand-dark); }
+
+    /* HERO */
+    .hero {
+      text-align: center;
+      padding: 5rem 2rem 4rem;
+      background: linear-gradient(135deg, #eff6ff 0%, #f9fafb 100%);
+    }
+    .hero h1 {
+      font-size: clamp(2rem, 5vw, 3.25rem);
+      font-weight: 800;
+      line-height: 1.15;
+      margin-bottom: 1.25rem;
+      color: var(--text);
+    }
+    .hero h1 span { color: var(--brand); }
+    .hero p {
+      font-size: 1.15rem;
+      color: var(--muted);
+      max-width: 560px;
+      margin: 0 auto 2rem;
+    }
+    .btn-group { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+    .btn-primary {
+      background: var(--brand);
+      color: var(--white);
+      padding: .8rem 2rem;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 1rem;
+      transition: background .2s;
+    }
+    .btn-primary:hover { background: var(--brand-dark); }
+    .btn-secondary {
+      background: var(--white);
+      color: var(--brand);
+      padding: .8rem 2rem;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 1rem;
+      border: 2px solid var(--brand);
+      transition: background .2s, color .2s;
+    }
+    .btn-secondary:hover { background: var(--brand); color: var(--white); }
+
+    /* FEATURES */
+    .section { padding: 4rem 2rem; }
+    .section-title {
+      text-align: center;
+      font-size: clamp(1.5rem, 3vw, 2rem);
+      font-weight: 700;
+      margin-bottom: .75rem;
+    }
+    .section-sub {
+      text-align: center;
+      color: var(--muted);
+      font-size: 1rem;
+      margin-bottom: 3rem;
+    }
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+    .card {
+      background: var(--bg);
+      border-radius: var(--radius);
+      padding: 2rem 1.5rem;
+      border: 1px solid #e5e7eb;
+    }
+    .card-icon { font-size: 2rem; margin-bottom: 1rem; }
+    .card h3 { font-size: 1.1rem; font-weight: 700; margin-bottom: .5rem; }
+    .card p { color: var(--muted); font-size: .95rem; }
+
+    /* HOW IT WORKS */
+    .steps { background: var(--bg); }
+    .steps-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 2rem;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    .step { text-align: center; }
+    .step-num {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: var(--brand);
+      color: var(--white);
+      font-weight: 800;
+      font-size: 1.2rem;
+      margin-bottom: 1rem;
+    }
+    .step h3 { font-weight: 700; margin-bottom: .4rem; }
+    .step p { color: var(--muted); font-size: .9rem; }
+
+    /* PRICING */
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.5rem;
+      max-width: 850px;
+      margin: 0 auto;
+    }
+    .price-card {
+      border-radius: var(--radius);
+      padding: 2rem 1.5rem;
+      border: 2px solid #e5e7eb;
+      text-align: center;
+    }
+    .price-card.featured {
+      border-color: var(--brand);
+      background: #eff6ff;
+    }
+    .price-card .badge {
+      display: inline-block;
+      background: var(--brand);
+      color: var(--white);
+      font-size: .75rem;
+      font-weight: 700;
+      padding: .2rem .6rem;
+      border-radius: 99px;
+      margin-bottom: .75rem;
+      text-transform: uppercase;
+      letter-spacing: .05em;
+    }
+    .price-card h3 { font-size: 1.2rem; font-weight: 700; margin-bottom: .5rem; }
+    .price-card .price {
+      font-size: 2.5rem;
+      font-weight: 800;
+      color: var(--brand);
+      line-height: 1;
+      margin: 1rem 0 .25rem;
+    }
+    .price-card .price span { font-size: 1rem; font-weight: 400; color: var(--muted); }
+    .price-card ul {
+      list-style: none;
+      text-align: left;
+      margin: 1.5rem 0;
+      display: flex;
+      flex-direction: column;
+      gap: .6rem;
+    }
+    .price-card ul li::before { content: '✓  '; color: var(--brand); font-weight: 700; }
+    .price-card ul li { font-size: .95rem; color: var(--text); }
+
+    /* CONTACT */
+    .contact-section { background: var(--bg); }
+    form {
+      max-width: 540px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    input, textarea, select {
+      width: 100%;
+      padding: .75rem 1rem;
+      border: 1.5px solid #d1d5db;
+      border-radius: 8px;
+      font-size: 1rem;
+      font-family: inherit;
+      background: var(--white);
+      transition: border-color .2s;
+    }
+    input:focus, textarea:focus { outline: none; border-color: var(--brand); }
+    textarea { min-height: 120px; resize: vertical; }
+    button[type="submit"] {
+      background: var(--brand);
+      color: var(--white);
+      border: none;
+      padding: .85rem;
+      border-radius: 8px;
+      font-size: 1rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: background .2s;
+    }
+    button[type="submit"]:hover { background: var(--brand-dark); }
+
+    /* FOOTER */
+    footer {
+      text-align: center;
+      padding: 2rem;
+      font-size: .875rem;
+      color: var(--muted);
+      border-top: 1px solid #e5e7eb;
+    }
+    footer a { color: var(--brand); text-decoration: none; }
+
+    @media (max-width: 600px) {
+      nav { padding: 1rem; }
+      .hero { padding: 3rem 1rem 2.5rem; }
+      .section { padding: 3rem 1rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a href="#" class="logo">Box<span style="color:#111827">Manager</span></a>
+    <a href="#contact" class="nav-cta">Demander une démo</a>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <h1>Gérez vos <span>box de stockage</span><br>en toute simplicité</h1>
+    <p>BoxManager centralise la gestion de vos espaces de stockage : contrats, paiements, accès clients — tout en un seul endroit.</p>
+    <div class="btn-group">
+      <a href="#contact" class="btn-primary">Essai gratuit 14 jours</a>
+      <a href="#fonctionnalites" class="btn-secondary">Découvrir les fonctionnalités</a>
+    </div>
+  </section>
+
+  <!-- FEATURES -->
+  <section class="section" id="fonctionnalites">
+    <h2 class="section-title">Tout ce dont vous avez besoin</h2>
+    <p class="section-sub">Une solution complète pour les exploitants de garde-meubles et box de stockage.</p>
+    <div class="features-grid">
+      <div class="card">
+        <div class="card-icon">📦</div>
+        <h3>Gestion des box</h3>
+        <p>Visualisez l'occupation en temps réel, gérez les tailles et les prix par unité.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">📄</div>
+        <h3>Contrats automatisés</h3>
+        <p>Générez et envoyez des contrats de location en quelques clics, signature électronique incluse.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">💳</div>
+        <h3>Paiements en ligne</h3>
+        <p>Encaissez vos loyers automatiquement par prélèvement ou carte bancaire.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">🔐</div>
+        <h3>Contrôle d'accès</h3>
+        <p>Pilotez les accès de vos clients à distance, en temps réel, depuis l'interface.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">📊</div>
+        <h3>Tableau de bord</h3>
+        <p>Suivez vos revenus, votre taux d'occupation et vos impayés d'un coup d'œil.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">📱</div>
+        <h3>Application mobile</h3>
+        <p>Gérez votre site où que vous soyez grâce à notre app iOS et Android.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section class="section steps" id="comment-ca-marche">
+    <h2 class="section-title">Comment ça marche ?</h2>
+    <p class="section-sub">Opérationnel en moins d'une journée.</p>
+    <div class="steps-grid">
+      <div class="step">
+        <div class="step-num">1</div>
+        <h3>Créez votre compte</h3>
+        <p>Inscrivez-vous et configurez votre site en quelques minutes.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <h3>Ajoutez vos box</h3>
+        <p>Importez ou saisissez votre plan d'occupation et vos tarifs.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <h3>Invitez vos clients</h3>
+        <p>Vos locataires reçoivent un accès à leur espace personnel en ligne.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">4</div>
+        <h3>Gérez depuis partout</h3>
+        <p>Pilotez votre activité 24h/24, depuis n'importe quel appareil.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRICING -->
+  <section class="section" id="tarifs">
+    <h2 class="section-title">Tarifs transparents</h2>
+    <p class="section-sub">Sans engagement. Sans frais cachés.</p>
+    <div class="pricing-grid">
+      <div class="price-card">
+        <h3>Starter</h3>
+        <p style="color:var(--muted);font-size:.9rem">Idéal pour démarrer</p>
+        <div class="price">49€ <span>/ mois</span></div>
+        <ul>
+          <li>Jusqu'à 50 box</li>
+          <li>Contrats électroniques</li>
+          <li>Paiements en ligne</li>
+          <li>Support par email</li>
+        </ul>
+        <a href="#contact" class="btn-primary" style="display:block;text-align:center">Commencer</a>
+      </div>
+      <div class="price-card featured">
+        <span class="badge">Populaire</span>
+        <h3>Pro</h3>
+        <p style="color:var(--muted);font-size:.9rem">Pour les sites en croissance</p>
+        <div class="price">99€ <span>/ mois</span></div>
+        <ul>
+          <li>Jusqu'à 200 box</li>
+          <li>Contrôle d'accès intégré</li>
+          <li>Application mobile</li>
+          <li>Support prioritaire</li>
+        </ul>
+        <a href="#contact" class="btn-primary" style="display:block;text-align:center">Commencer</a>
+      </div>
+      <div class="price-card">
+        <h3>Entreprise</h3>
+        <p style="color:var(--muted);font-size:.9rem">Multi-sites & grand compte</p>
+        <div class="price" style="font-size:1.75rem">Sur devis</div>
+        <ul>
+          <li>Box illimités</li>
+          <li>Multi-sites</li>
+          <li>API & intégrations</li>
+          <li>Account manager dédié</li>
+        </ul>
+        <a href="#contact" class="btn-secondary" style="display:block;text-align:center">Nous contacter</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="section contact-section" id="contact">
+    <h2 class="section-title">Demandez une démo gratuite</h2>
+    <p class="section-sub">Notre équipe vous répond sous 24h.</p>
+    <form onsubmit="handleSubmit(event)">
+      <input type="text" name="nom" placeholder="Votre nom" required />
+      <input type="email" name="email" placeholder="Votre email" required />
+      <input type="tel" name="telephone" placeholder="Votre téléphone (optionnel)" />
+      <textarea name="message" placeholder="Décrivez votre site (nombre de box, localisation…)"></textarea>
+      <button type="submit">Envoyer ma demande</button>
+    </form>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>&copy; 2026 BoxManager. Tous droits réservés. &nbsp;|&nbsp; <a href="mailto:contact@boxmanager.fr">contact@boxmanager.fr</a></p>
+  </footer>
+
+  <script>
+    function handleSubmit(e) {
+      e.preventDefault();
+      const btn = e.target.querySelector('button[type="submit"]');
+      btn.textContent = 'Message envoyé !';
+      btn.disabled = true;
+      btn.style.background = '#16a34a';
+      e.target.reset();
+    }
+  </script>
+
+</body>
+</html>
