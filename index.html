@@ -258,6 +258,14 @@
     }
     .hero-proof span::before { content: '✓  '; color: var(--brand); font-weight: 700; }
 
+    /* FORM REASSURANCE */
+    .form-reassurance {
+      text-align: center;
+      font-size: .85rem;
+      color: var(--muted);
+      margin-top: .5rem;
+    }
+
     /* FOUNDER */
     .founder-section { background: var(--white); }
     .founder-inner {
@@ -311,7 +319,7 @@
   <!-- NAV -->
   <nav>
     <a href="#" class="logo">Box<span style="color:#111827">Manager</span></a>
-    <a href="#contact" class="nav-cta">Demander une démo</a>
+    <a href="#contact" class="nav-cta">Essai gratuit</a>
   </nav>
 
   <!-- HERO -->
@@ -319,7 +327,7 @@
     <h1>Gérez vos locations de box<br>en <span>15 minutes par mois</span></h1>
     <p>Importez votre relevé bancaire. BoxManager détecte les impayés, envoie les relances et génère vos baux PDF. Prêt pour votre déclaration d'impôts.</p>
     <div class="btn-group">
-      <a href="#contact" class="btn-primary">Essai gratuit 14 jours</a>
+      <a href="#contact" class="btn-primary">Démarrer mon essai gratuit</a>
       <a href="#fonctionnalites" class="btn-secondary">Découvrir les fonctionnalités</a>
     </div>
     <div class="hero-proof">
@@ -430,7 +438,7 @@
           <li>Génération de baux PDF</li>
           <li>Support par email</li>
         </ul>
-        <a href="#contact" class="btn-primary" style="display:block;text-align:center">Commencer</a>
+        <a href="#contact" class="btn-primary" style="display:block;text-align:center">Essai gratuit 14 jours</a>
       </div>
       <div class="price-card featured">
         <span class="badge">Populaire</span>
@@ -443,7 +451,7 @@
           <li>Export comptable</li>
           <li>Support prioritaire</li>
         </ul>
-        <a href="#contact" class="btn-primary" style="display:block;text-align:center">Commencer</a>
+        <a href="#contact" class="btn-primary" style="display:block;text-align:center">Essai gratuit 14 jours</a>
       </div>
       <div class="price-card">
         <h3>Entreprise</h3>
@@ -462,15 +470,22 @@
 
   <!-- CONTACT -->
   <section class="section contact-section" id="contact">
-    <h2 class="section-title">Demandez une démo gratuite</h2>
-    <p class="section-sub">Réponse sous 24h.</p>
+    <h2 class="section-title">Essai gratuit 14 jours — sans carte bancaire</h2>
+    <p class="section-sub">On vous configure BoxManager avec vos box et vos locataires. Vous êtes opérationnel le jour même.</p>
     <form onsubmit="handleSubmit(event)">
       <input type="text" name="nom" placeholder="Votre nom" required />
       <input type="email" name="email" placeholder="Votre email" required />
-      <input type="tel" name="telephone" placeholder="Votre téléphone (optionnel)" />
-      <textarea name="message" placeholder="Décrivez votre site (nombre de box, localisation…)"></textarea>
-      <button type="submit">Envoyer ma demande</button>
+      <select name="nb_box" required>
+        <option value="" disabled selected>Combien de box gérez-vous ?</option>
+        <option value="1-10">Moins de 10</option>
+        <option value="11-30">11 à 30</option>
+        <option value="31-50">31 à 50</option>
+        <option value="51+">Plus de 50</option>
+      </select>
+      <textarea name="message" placeholder="Une question ou un contexte à partager ? (optionnel)"></textarea>
+      <button type="submit">Démarrer mon essai gratuit</button>
     </form>
+    <p class="form-reassurance">Sans carte bancaire &nbsp;·&nbsp; Sans engagement &nbsp;·&nbsp; Réponse sous 24h</p>
   </section>
 
   <!-- FOOTER -->
