@@ -386,7 +386,9 @@
   <section class="section contact-section" id="contact">
     <h2 class="section-title">Demandez une démo gratuite</h2>
     <p class="section-sub">Notre équipe vous répond sous 24h.</p>
-    <form onsubmit="handleSubmit(event)">
+ <form action="https://formspree.io/f/xbdqavqz" method="POST">
+   <input type="hidden" name="_subject" value="Nouvelle demande BoxManager">
+<input type="hidden" name="_captcha" value="false">
       <input type="text" name="nom" placeholder="Votre nom" required />
       <input type="email" name="email" placeholder="Votre email" required />
       <input type="tel" name="telephone" placeholder="Votre téléphone (optionnel)" />
@@ -399,17 +401,6 @@
   <footer>
     <p>&copy; 2026 BoxManager. Tous droits réservés. &nbsp;|&nbsp; <a href="mailto:contact@boxmanager.fr">contact@boxmanager.fr</a></p>
   </footer>
-
-  <script>
-    function handleSubmit(e) {
-      e.preventDefault();
-      const btn = e.target.querySelector('button[type="submit"]');
-      btn.textContent = 'Message envoyé !';
-      btn.disabled = true;
-      btn.style.background = '#16a34a';
-      e.target.reset();
-    }
-  </script>
 
 </body>
 </html>
