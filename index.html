@@ -246,6 +246,18 @@
     }
     footer a { color: var(--brand); text-decoration: none; }
 
+    /* HERO PROOF STRIP */
+    .hero-proof {
+      display: flex;
+      gap: 1.5rem;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 1.75rem;
+      font-size: .9rem;
+      color: var(--muted);
+    }
+    .hero-proof span::before { content: '✓  '; color: var(--brand); font-weight: 700; }
+
     /* FOUNDER */
     .founder-section { background: var(--white); }
     .founder-inner {
@@ -304,11 +316,16 @@
 
   <!-- HERO -->
   <section class="hero">
-    <h1>Gérez vos <span>locations de box</span><br>sans les tableurs</h1>
+    <h1>Gérez vos locations de box<br>en <span>15 minutes par mois</span></h1>
     <p>Importez votre relevé bancaire. BoxManager détecte les impayés, envoie les relances et génère vos baux PDF. Prêt pour votre déclaration d'impôts.</p>
     <div class="btn-group">
       <a href="#contact" class="btn-primary">Essai gratuit 14 jours</a>
       <a href="#fonctionnalites" class="btn-secondary">Découvrir les fonctionnalités</a>
+    </div>
+    <div class="hero-proof">
+      <span>Simple. Fiable.</span>
+      <span>Quel que soit le nombre de locataires</span>
+      <span>Conçu par un propriétaire</span>
     </div>
   </section>
 
@@ -353,7 +370,7 @@
   <!-- HOW IT WORKS -->
   <section class="section steps" id="comment-ca-marche">
     <h2 class="section-title">Comment ça marche ?</h2>
-    <p class="section-sub">Opérationnel en moins d'une journée.</p>
+    <p class="section-sub">Opérationnel en moins d'une journée. 15 minutes par mois ensuite.</p>
     <div class="steps-grid">
       <div class="step">
         <div class="step-num">1</div>
