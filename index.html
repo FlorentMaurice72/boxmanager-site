@@ -246,10 +246,51 @@
     }
     footer a { color: var(--brand); text-decoration: none; }
 
+    /* FOUNDER */
+    .founder-section { background: var(--white); }
+    .founder-inner {
+      max-width: 720px;
+      margin: 0 auto;
+      border: 1px solid #e5e7eb;
+      border-radius: var(--radius);
+      padding: 2.5rem 2rem;
+    }
+    .founder-inner blockquote {
+      font-size: 1.1rem;
+      line-height: 1.7;
+      color: var(--text);
+      border-left: 4px solid var(--brand);
+      padding-left: 1.25rem;
+      margin-bottom: 2rem;
+    }
+    .founder-stats {
+      display: flex;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+    .founder-stat strong {
+      display: block;
+      font-size: 1.6rem;
+      font-weight: 800;
+      color: var(--brand);
+    }
+    .founder-stat span {
+      font-size: .9rem;
+      color: var(--muted);
+    }
+    .founder-byline {
+      margin-top: 1.75rem;
+      font-size: .9rem;
+      color: var(--muted);
+    }
+    .founder-byline strong { color: var(--text); }
+
     @media (max-width: 600px) {
       nav { padding: 1rem; }
       .hero { padding: 3rem 1rem 2.5rem; }
       .section { padding: 3rem 1rem; }
+      .founder-inner { padding: 1.75rem 1.25rem; }
+      .founder-stats { gap: 1.25rem; }
     }
   </style>
 </head>
@@ -329,6 +370,31 @@
         <h3>Traitez les impayés</h3>
         <p>Les retards sont détectés et les relances partent automatiquement.</p>
       </div>
+    </div>
+  </section>
+
+  <!-- FOUNDER -->
+  <section class="section founder-section" id="fondateur">
+    <h2 class="section-title">Créé par un propriétaire, pour des propriétaires</h2>
+    <div class="founder-inner">
+      <blockquote>
+        "Je gérais mes box sur Excel. Chaque mois, je vérifiait manuellement qui avait payé, je relançais à la main, je cherchais mes chiffres au moment des impôts. J'ai construit BoxManager parce que je n'ai pas trouvé d'outil adapté à ma réalité — pas à celle d'un grand exploitant, la mienne."
+      </blockquote>
+      <div class="founder-stats">
+        <div class="founder-stat">
+          <strong>34</strong>
+          <span>box en gestion</span>
+        </div>
+        <div class="founder-stat">
+          <strong>30+</strong>
+          <span>locataires</span>
+        </div>
+        <div class="founder-stat">
+          <strong>10 ans</strong>
+          <span>d'expérience</span>
+        </div>
+      </div>
+      <p class="founder-byline"><strong>Florent Maurice</strong> — fondateur de BoxManager</p>
     </div>
   </section>
 
