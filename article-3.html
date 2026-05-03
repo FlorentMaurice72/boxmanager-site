@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Comment réduire les impayés de loyer dans vos box — Blog Boxmanager</title>
+<meta name="description" content="Stratégies concrètes pour passer d'un taux d'encaissement de 85% à plus de 97% en quelques mois.">
+<link rel="stylesheet" href="blog-shared.css">
+<style>
+.article-hero { padding: 110px 0 56px; border-bottom: 1px solid var(--border); }
+.article-hero-inner { max-width: 760px; margin: 0 auto; padding: 0 28px; }
+.article-breadcrumb { font-size: 13px; color: var(--text-subtle); margin-bottom: 24px; display: flex; align-items: center; gap: 8px; }
+.article-breadcrumb a { color: var(--text-subtle); text-decoration: none; transition: color 0.2s; }
+.article-breadcrumb a:hover { color: var(--green); }
+.article-title { font-family: 'Space Grotesk', sans-serif; font-size: clamp(1.9rem, 4vw, 2.8rem); font-weight: 700; letter-spacing: -0.025em; line-height: 1.1; margin: 16px 0 20px; }
+.article-meta { font-size: 13px; color: var(--text-subtle); display: flex; gap: 16px; align-items: center; flex-wrap: wrap; }
+.article-meta-dot { width: 3px; height: 3px; border-radius: 50%; background: var(--text-subtle); }
+.article-layout { display: grid; grid-template-columns: 1fr 280px; gap: 64px; padding: 64px 0; max-width: 1100px; margin: 0 auto; }
+.article-sidebar { padding-left: 0; }
+.sidebar-block { background: var(--bg-card); border: 1px solid var(--border); border-radius: 14px; padding: 24px; margin-bottom: 24px; }
+.sidebar-block-title { font-family: 'Space Grotesk', sans-serif; font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: var(--text-muted); margin-bottom: 16px; }
+.cta-sidebar { background: linear-gradient(135deg, rgba(22,163,74,0.08), var(--bg-card)); border: 1px solid rgba(22,163,74,0.2); border-radius: 14px; padding: 28px 24px; text-align: center; }
+.cta-sidebar h3 { font-family: 'Space Grotesk', sans-serif; font-size: 16px; font-weight: 700; margin-bottom: 10px; }
+.cta-sidebar p { font-size: 13px; color: var(--text-muted); margin-bottom: 20px; line-height: 1.6; }
+.related-link { display: flex; gap: 10px; align-items: flex-start; padding: 10px 0; border-bottom: 1px solid var(--border); text-decoration: none; color: var(--text); transition: color 0.2s; }
+.related-link:last-child { border-bottom: none; }
+.related-link:hover { color: var(--green); text-decoration: none; }
+.related-link-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--green); margin-top: 6px; flex-shrink: 0; }
+.related-link-title { font-size: 13px; line-height: 1.5; }
+@media (max-width: 900px) { .article-layout { grid-template-columns: 1fr; } .article-sidebar { display: none; } }
+</style>
+</head>
+<body>
+<nav>
+  <div class="container nav-inner">
+    <a href="index.html" class="nav-logo">
+      <svg width="30" height="30" viewBox="0 0 200 200" fill="none">
+        <rect width="200" height="200" rx="44" fill="#16a34a"/>
+        <rect x="38" y="46" width="22" height="108" fill="white"/>
+        <rect x="140" y="46" width="22" height="108" fill="white"/>
+        <rect x="38" y="46" width="124" height="22" fill="white"/>
+        <rect x="60" y="104" width="80" height="14" fill="white"/>
+        <rect x="60" y="128" width="80" height="14" fill="white"/>
+      </svg>
+      <span class="nav-logo-text"><span>Box</span>manager</span>
+    </a>
+    <div class="nav-links">
+      <a href="index.html#features">Fonctionnalités</a>
+      <a href="index.html#pricing">Tarifs</a>
+      <a href="blog.html" class="active">Blog</a>
+    </div>
+    <div class="nav-actions">
+      <button class="theme-toggle" id="themeToggle">
+        <svg id="themeIcon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+        </svg>
+      </button>
+      <a href="index.html#pricing" class="btn-primary">Essai gratuit</a>
+    </div>
+  </div>
+</nav>
+
+<div class="article-hero">
+  <div class="article-hero-inner">
+    <div class="article-breadcrumb">
+      <a href="index.html">Accueil</a>
+      <span>›</span>
+      <a href="blog.html">Blog</a>
+      <span>›</span>
+      <span>Encaissement</span>
+    </div>
+    <div><span class="cat-badge">Encaissement</span></div>
+    <h1 class="article-title">Comment réduire les impayés de loyer dans vos box</h1>
+    <div class="article-meta">
+      <span>22 avr. 2025</span>
+      <div class="article-meta-dot"></div>
+      <span>10 min de lecture</span>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="article-layout">
+    <article>
+      <div class="article-body">
+
+<p>Les impayés sont le cauchemar de tout propriétaire. Dans le secteur des box et garages, ils sont souvent sous-estimés — pourtant, un taux d'encaissement de 85% sur 20 box représente 3 loyers manquants chaque mois. Voici comment inverser la tendance.</p>
+
+<h2>1. Sélectionner les bons locataires dès le départ</h2>
+<p>La meilleure façon d'éviter les impayés est de ne pas les créer. Lors de l'entrée d'un nouveau locataire :</p>
+<ul>
+  <li>Demandez une pièce d'identité valide</li>
+  <li>Vérifiez l'adresse (une quittance de loyer ou une facture récente)</li>
+  <li>Collectez un e-mail et un numéro de téléphone mobile actifs</li>
+  <li>Exigez le premier mois et le dépôt de garantie avant la remise des clés</li>
+</ul>
+<div class="tip-box"><div class="tip-label">Astuce</div>Un locataire qui hésite à payer le dépôt de garantie avant l'entrée dans les lieux est un signal d'alerte fort. Ne cédez pas sur ce point.</div>
+
+<h2>2. Standardiser les modalités de paiement</h2>
+<p>Plus vous facilitez le paiement, plus vous êtes payé. Standardisez :</p>
+<ul>
+  <li><strong>La date</strong> : toujours le même jour du mois (le 1er ou le 5)</li>
+  <li><strong>Le montant</strong> : affiché clairement dans le bail</li>
+  <li><strong>Le libellé</strong> : demandez à vos locataires d'inclure leur nom et le numéro de box dans le virement — cela facilite le rapprochement bancaire</li>
+</ul>
+
+<h2>3. Automatiser le rapprochement bancaire</h2>
+<p>Chaque mois, la vérification manuelle des paiements prend du temps et génère des erreurs. Avec l'import CSV bancaire de Boxmanager, vous importez votre relevé et le logiciel identifie automatiquement qui a payé et qui ne l'a pas fait.</p>
+<p>Le temps de traitement passe de 2 heures à 5 minutes. Et surtout, aucun impayé ne passe à travers les mailles.</p>
+
+<h2>4. Relancer tôt, relancer souvent</h2>
+<p>La psychologie du débiteur est simple : plus on attend, plus il est difficile de récupérer les sommes dues. Mettez en place un protocole strict :</p>
+<ol>
+  <li><strong>J+3 après échéance</strong> : e-mail de rappel courtois et automatique</li>
+  <li><strong>J+10</strong> : deuxième e-mail, plus ferme, avec le montant exact dû</li>
+  <li><strong>J+20</strong> : appel téléphonique personnel</li>
+  <li><strong>J+30</strong> : mise en demeure par courrier recommandé</li>
+</ol>
+
+<h2>5. Proposer des facilités de paiement ponctuelles</h2>
+<p>Un locataire de bonne foi qui traverse une période difficile peut accepter un échéancier. C'est souvent plus efficace — et moins coûteux — qu'une procédure judiciaire. Formalisez l'accord par écrit et ne l'accordez pas plus d'une fois par an.</p>
+
+<h2>6. Mesurer votre taux d'encaissement chaque mois</h2>
+<p>Ce qui ne se mesure pas ne s'améliore pas. Suivez chaque mois :</p>
+<ul>
+  <li>Loyers attendus vs loyers encaissés</li>
+  <li>Nombre de locataires en retard</li>
+  <li>Montant total des impayés en cours</li>
+</ul>
+<p>Boxmanager calcule ces indicateurs automatiquement dans le tableau de bord Finances.</p>
+
+<blockquote>Les propriétaires qui passent à plus de 97% d'encaissement ont tous un point commun : un processus de relance automatisé et appliqué sans exception.</blockquote>
+    
+      </div>
+      <div style="margin-top:56px;padding-top:32px;border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;">
+        <a href="blog.html" style="font-size:14px;color:var(--text-muted);display:flex;align-items:center;gap:6px;text-decoration:none;" onmouseover="this.style.color='var(--green)'" onmouseout="this.style.color='var(--text-muted)'">← Retour au blog</a>
+        <a href="index.html#pricing" class="btn-primary">Essayer Boxmanager gratuitement</a>
+      </div>
+    </article>
+    <aside class="article-sidebar">
+      <div class="cta-sidebar">
+        <h3>Essayez Boxmanager</h3>
+        <p>Gérez vos box et garages en location — baux, paiements, relances — depuis une seule interface.</p>
+        <a href="index.html#pricing" class="btn-primary" style="width:100%;justify-content:center;">Démarrer gratuitement</a>
+      </div>
+      <div class="sidebar-block" style="margin-top:0">
+        <div class="sidebar-block-title">Articles récents</div>
+        <a href="article-1.html" class="related-link"><div class="related-link-dot"></div><div class="related-link-title">Guide complet : gérer ses box et garages en location en 2025</div></a><a href="article-2.html" class="related-link"><div class="related-link-dot"></div><div class="related-link-title">Bail de garage et box : ce que dit la loi en 2025</div></a><a href="article-4.html" class="related-link"><div class="related-link-dot"></div><div class="related-link-title">Investir dans des box de stockage : guide du débutant</div></a><a href="article-5.html" class="related-link"><div class="related-link-dot"></div><div class="related-link-title">Fiscalité des loyers de box et garages : le guide 2025</div></a><a href="article-6.html" class="related-link"><div class="related-link-dot"></div><div class="related-link-title">Comment trouver et sélectionner de bons locataires pour vos box</div></a>
+      </div>
+    </aside>
+  </div>
+</div>
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <a href="index.html" class="footer-logo-sm">
+        <svg width="22" height="22" viewBox="0 0 200 200" fill="none"><rect width="200" height="200" rx="44" fill="#16a34a"/><rect x="38" y="46" width="22" height="108" fill="white"/><rect x="140" y="46" width="22" height="108" fill="white"/><rect x="38" y="46" width="124" height="22" fill="white"/><rect x="60" y="104" width="80" height="14" fill="white"/><rect x="60" y="128" width="80" height="14" fill="white"/></svg>
+        <span><span>Box</span>manager</span>
+      </a>
+      <div class="footer-links">
+        <a href="index.html">Accueil</a><a href="blog.html">Blog</a><a href="index.html#pricing">Tarifs</a>
+      </div>
+    </div>
+    <p class="footer-copy">© 2025 Boxmanager. Tous droits réservés.</p>
+  </div>
+</footer>
+<script>
+const html=document.documentElement;
+const btn=document.getElementById('themeToggle');
+const icon=document.getElementById('themeIcon');
+const moonP=`<circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>`;
+const sunP=`<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>`;
+let t=localStorage.getItem('bm-theme')||'dark';
+function applyT(v){html.setAttribute('data-theme',v);icon.innerHTML=v==='dark'?moonP:sunP;localStorage.setItem('bm-theme',v);}
+applyT(t); btn.addEventListener('click',()=>{t=t==='dark'?'light':'dark';applyT(t);});
+const obs=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible');}),{threshold:0.1});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+</script>
+</body>
+</html>

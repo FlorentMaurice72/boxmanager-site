@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Boxmanager v2 : les nouvelles fonctionnalités de mai 2025 — Blog Boxmanager</title>
+<meta name="description" content="Matching bancaire amélioré, tableau de bord finances repensé, relances personnalisables — tour d'horizon des nouveautés.">
+<link rel="stylesheet" href="blog-shared.css">
+<style>
+.article-hero { padding: 110px 0 56px; border-bottom: 1px solid var(--border); }
+.article-hero-inner { max-width: 760px; margin: 0 auto; padding: 0 28px; }
+.article-breadcrumb { font-size: 13px; color: var(--text-subtle); margin-bottom: 24px; display: flex; align-items: center; gap: 8px; }
+.article-breadcrumb a { color: var(--text-subtle); text-decoration: none; transition: color 0.2s; }
+.article-breadcrumb a:hover { color: var(--green); }
+.article-title { font-family: 'Space Grotesk', sans-serif; font-size: clamp(1.9rem, 4vw, 2.8rem); font-weight: 700; letter-spacing: -0.025em; line-height: 1.1; margin: 16px 0 20px; }
+.article-meta { font-size: 13px; color: var(--text-subtle); display: flex; gap: 16px; align-items: center; flex-wrap: wrap; }
+.article-meta-dot { width: 3px; height: 3px; border-radius: 50%; background: var(--text-subtle); }
+.article-layout { display: grid; grid-template-columns: 1fr 280px; gap: 64px; padding: 64px 0; max-width: 1100px; margin: 0 auto; }
+.article-sidebar { padding-left: 0; }
+.sidebar-block { background: var(--bg-card); border: 1px solid var(--border); border-radius: 14px; padding: 24px; margin-bottom: 24px; }
+.sidebar-block-title { font-family: 'Space Grotesk', sans-serif; font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: var(--text-muted); margin-bottom: 16px; }
+.cta-sidebar { background: linear-gradient(135deg, rgba(22,163,74,0.08), var(--bg-card)); border: 1px solid rgba(22,163,74,0.2); border-radius: 14px; padding: 28px 24px; text-align: center; }
+.cta-sidebar h3 { font-family: 'Space Grotesk', sans-serif; font-size: 16px; font-weight: 700; margin-bottom: 10px; }
+.cta-sidebar p { font-size: 13px; color: var(--text-muted); margin-bottom: 20px; line-height: 1.6; }
+.related-link { display: flex; gap: 10px; align-items: flex-start; padding: 10px 0; border-bottom: 1px solid var(--border); text-decoration: none; color: var(--text); transition: color 0.2s; }
+.related-link:last-child { border-bottom: none; }
+.related-link:hover { color: var(--green); text-decoration: none; }
+.related-link-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--green); margin-top: 6px; flex-shrink: 0; }
+.related-link-title { font-size: 13px; line-height: 1.5; }
+@media (max-width: 900px) { .article-layout { grid-template-columns: 1fr; } .article-sidebar { display: none; } }
+</style>
+</head>
+<body>
+<nav>
+  <div class="container nav-inner">
+    <a href="index.html" class="nav-logo">
+      <svg width="30" height="30" viewBox="0 0 200 200" fill="none">
+        <rect width="200" height="200" rx="44" fill="#16a34a"/>
+        <rect x="38" y="46" width="22" height="108" fill="white"/>
+        <rect x="140" y="46" width="22" height="108" fill="white"/>
+        <rect x="38" y="46" width="124" height="22" fill="white"/>
+        <rect x="60" y="104" width="80" height="14" fill="white"/>
+        <rect x="60" y="128" width="80" height="14" fill="white"/>
+      </svg>
+      <span class="nav-logo-text"><span>Box</span>manager</span>
+    </a>
+    <div class="nav-links">
+      <a href="index.html#features">Fonctionnalités</a>
+      <a href="index.html#pricing">Tarifs</a>
+      <a href="blog.html" class="active">Blog</a>
+    </div>
+    <div class="nav-actions">
+      <button class="theme-toggle" id="themeToggle">
+        <svg id="themeIcon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+        </svg>
+      </button>
+      <a href="index.html#pricing" class="btn-primary">Essai gratuit</a>
+    </div>
+  </div>
+</nav>
+
+<div class="article-hero">
+  <div class="article-hero-inner">
+    <div class="article-breadcrumb">
+      <a href="index.html">Accueil</a>
+      <span>›</span>
+      <a href="blog.html">Blog</a>
+      <span>›</span>
+      <span>Boxmanager</span>
+    </div>
+    <div><span class="cat-badge">Boxmanager</span></div>
+    <h1 class="article-title">Boxmanager v2 : les nouvelles fonctionnalités de mai 2025</h1>
+    <div class="article-meta">
+      <span>1er mai 2025</span>
+      <div class="article-meta-dot"></div>
+      <span>5 min de lecture</span>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="article-layout">
+    <article>
+      <div class="article-body">
+
+<p>Nous sommes fiers de vous présenter Boxmanager v2, une mise à jour majeure qui repense entièrement l'expérience de gestion. Voici ce qui change.</p>
+
+<h2>Matching bancaire amélioré</h2>
+<p>L'algorithme de rapprochement bancaire a été entièrement revu. La v2 utilise une combinaison de critères pondérés (montant exact, montant approché, libellé, date) pour proposer des correspondances même lorsque les locataires utilisent des libellés non standards.</p>
+<p>En test bêta, le taux de match automatique est passé de <strong>78% à 94%</strong> sur des relevés réels.</p>
+
+<h2>Tableau de bord finances repensé</h2>
+<p>Le nouveau tableau de bord Finances centralise tous vos indicateurs de performance :</p>
+<ul>
+  <li>Rentabilité brute et nette par site</li>
+  <li>Cash-flow mensuel et annuel</li>
+  <li>Évolution du taux d'encaissement sur 12 mois</li>
+  <li>Répartition des charges par catégorie</li>
+</ul>
+<p>Tous les graphiques sont exportables en PDF pour votre comptable.</p>
+
+<h2>Relances personnalisables</h2>
+<p>Vous pouvez désormais personnaliser intégralement le contenu de vos e-mails de relance : objet, corps du message, ton (courtois, ferme, formel), et signature. Trois modèles prédéfinis sont disponibles pour démarrer rapidement.</p>
+<div class="tip-box"><div class="tip-label">Nouveau</div>Les relances peuvent désormais inclure automatiquement le récapitulatif des loyers dus avec les dates et montants précis.</div>
+
+<h2>Mode multi-utilisateurs</h2>
+<p>Les plans Pro et Business permettent maintenant d'inviter des collaborateurs avec des niveaux d'accès distincts : lecture seule, saisie, ou administration complète. Idéal pour les propriétaires qui délèguent une partie de leur gestion.</p>
+
+<h2>Application mobile (bêta)</h2>
+<p>Une version mobile responsive de Boxmanager est disponible en bêta. Consultez votre tableau de bord, visualisez les impayés et approuvez les matching bancaires depuis votre smartphone.</p>
+
+<h2>Ce qui arrive prochainement</h2>
+<ul>
+  <li>Signature électronique intégrée pour les baux</li>
+  <li>Connexion directe avec les API bancaires (Plaid, Bridge)</li>
+  <li>Export comptable au format FEC</li>
+</ul>
+
+<blockquote>Boxmanager v2 est disponible dès aujourd'hui pour tous les utilisateurs existants. La mise à jour est automatique — aucune action requise de votre part.</blockquote>
+    
+      </div>
+      <div style="margin-top:56px;padding-top:32px;border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;">
+        <a href="blog.html" style="font-size:14px;color:var(--text-muted);display:flex;align-items:center;gap:6px;text-decoration:none;" onmouseover="this.style.color='var(--green)'" onmouseout="this.style.color='var(--text-muted)'">← Retour au blog</a>
+        <a href="index.html#pricing" class="btn-primary">Essayer Boxmanager gratuitement</a>
+      </div>
+    </article>
+    <aside class="article-sidebar">
+      <div class="cta-sidebar">
+        <h3>Essayez Boxmanager</h3>
+        <p>Gérez vos box et garages en location — baux, paiements, relances — depuis une seule interface.</p>
+        <a href="index.html#pricing" class="btn-primary" style="width:100%;justify-content:center;">Démarrer gratuitement</a>
+      </div>
+      <div class="sidebar-block" style="margin-top:0">
+        <div class="sidebar-block-title">Articles récents</div>
+        <a href="article-1.html" class="related-link"><div class="related-link-dot"></div><div class="related-link-title">Guide complet : gérer ses box et garages en location en 2025</div></a><a href="article-2.html" class="related-link"><div class="related-link-dot"></div><div class="related-link-title">Bail de garage et box : ce que dit la loi en 2025</div></a><a href="article-3.html" class="related-link"><div class="related-link-dot"></div><div class="related-link-title">Comment réduire les impayés de loyer dans vos box</div></a><a href="article-4.html" class="related-link"><div class="related-link-dot"></div><div class="related-link-title">Investir dans des box de stockage : guide du débutant</div></a><a href="article-5.html" class="related-link"><div class="related-link-dot"></div><div class="related-link-title">Fiscalité des loyers de box et garages : le guide 2025</div></a>
+      </div>
+    </aside>
+  </div>
+</div>
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <a href="index.html" class="footer-logo-sm">
+        <svg width="22" height="22" viewBox="0 0 200 200" fill="none"><rect width="200" height="200" rx="44" fill="#16a34a"/><rect x="38" y="46" width="22" height="108" fill="white"/><rect x="140" y="46" width="22" height="108" fill="white"/><rect x="38" y="46" width="124" height="22" fill="white"/><rect x="60" y="104" width="80" height="14" fill="white"/><rect x="60" y="128" width="80" height="14" fill="white"/></svg>
+        <span><span>Box</span>manager</span>
+      </a>
+      <div class="footer-links">
+        <a href="index.html">Accueil</a><a href="blog.html">Blog</a><a href="index.html#pricing">Tarifs</a>
+      </div>
+    </div>
+    <p class="footer-copy">© 2025 Boxmanager. Tous droits réservés.</p>
+  </div>
+</footer>
+<script>
+const html=document.documentElement;
+const btn=document.getElementById('themeToggle');
+const icon=document.getElementById('themeIcon');
+const moonP=`<circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>`;
+const sunP=`<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>`;
+let t=localStorage.getItem('bm-theme')||'dark';
+function applyT(v){html.setAttribute('data-theme',v);icon.innerHTML=v==='dark'?moonP:sunP;localStorage.setItem('bm-theme',v);}
+applyT(t); btn.addEventListener('click',()=>{t=t==='dark'?'light':'dark';applyT(t);});
+const obs=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible');}),{threshold:0.1});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+</script>
+</body>
+</html>

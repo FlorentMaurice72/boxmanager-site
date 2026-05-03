@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Import CSV bancaire : comment automatiser votre comptabilité locative — Blog Boxmanager</title>
+<meta name="description" content="Étape par étape : exporter votre relevé bancaire, l'importer dans Boxmanager et réconcilier vos paiements en 5 minutes.">
+<link rel="stylesheet" href="blog-shared.css">
+<style>
+.article-hero { padding: 110px 0 56px; border-bottom: 1px solid var(--border); }
+.article-hero-inner { max-width: 760px; margin: 0 auto; padding: 0 28px; }
+.article-breadcrumb { font-size: 13px; color: var(--text-subtle); margin-bottom: 24px; display: flex; align-items: center; gap: 8px; }
+.article-breadcrumb a { color: var(--text-subtle); text-decoration: none; transition: color 0.2s; }
+.article-breadcrumb a:hover { color: var(--green); }
+.article-title { font-family: 'Space Grotesk', sans-serif; font-size: clamp(1.9rem, 4vw, 2.8rem); font-weight: 700; letter-spacing: -0.025em; line-height: 1.1; margin: 16px 0 20px; }
+.article-meta { font-size: 13px; color: var(--text-subtle); display: flex; gap: 16px; align-items: center; flex-wrap: wrap; }
+.article-meta-dot { width: 3px; height: 3px; border-radius: 50%; background: var(--text-subtle); }
+.article-layout { display: grid; grid-template-columns: 1fr 280px; gap: 64px; padding: 64px 0; max-width: 1100px; margin: 0 auto; }
+.article-sidebar { padding-left: 0; }
+.sidebar-block { background: var(--bg-card); border: 1px solid var(--border); border-radius: 14px; padding: 24px; margin-bottom: 24px; }
+.sidebar-block-title { font-family: 'Space Grotesk', sans-serif; font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: var(--text-muted); margin-bottom: 16px; }
+.cta-sidebar { background: linear-gradient(135deg, rgba(22,163,74,0.08), var(--bg-card)); border: 1px solid rgba(22,163,74,0.2); border-radius: 14px; padding: 28px 24px; text-align: center; }
+.cta-sidebar h3 { font-family: 'Space Grotesk', sans-serif; font-size: 16px; font-weight: 700; margin-bottom: 10px; }
+.cta-sidebar p { font-size: 13px; color: var(--text-muted); margin-bottom: 20px; line-height: 1.6; }
+.related-link { display: flex; gap: 10px; align-items: flex-start; padding: 10px 0; border-bottom: 1px solid var(--border); text-decoration: none; color: var(--text); transition: color 0.2s; }
+.related-link:last-child { border-bottom: none; }
+.related-link:hover { color: var(--green); text-decoration: none; }
+.related-link-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--green); margin-top: 6px; flex-shrink: 0; }
+.related-link-title { font-size: 13px; line-height: 1.5; }
+@media (max-width: 900px) { .article-layout { grid-template-columns: 1fr; } .article-sidebar { display: none; } }
+</style>
+</head>
+<body>
+<nav>
+  <div class="container nav-inner">
+    <a href="index.html" class="nav-logo">
+      <svg width="30" height="30" viewBox="0 0 200 200" fill="none">
+        <rect width="200" height="200" rx="44" fill="#16a34a"/>
+        <rect x="38" y="46" width="22" height="108" fill="white"/>
+        <rect x="140" y="46" width="22" height="108" fill="white"/>
+        <rect x="38" y="46" width="124" height="22" fill="white"/>
+        <rect x="60" y="104" width="80" height="14" fill="white"/>
+        <rect x="60" y="128" width="80" height="14" fill="white"/>
+      </svg>
+      <span class="nav-logo-text"><span>Box</span>manager</span>
+    </a>
+    <div class="nav-links">
+      <a href="index.html#features">Fonctionnalités</a>
+      <a href="index.html#pricing">Tarifs</a>
+      <a href="blog.html" class="active">Blog</a>
+    </div>
+    <div class="nav-actions">
+      <button class="theme-toggle" id="themeToggle">
+        <svg id="themeIcon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+        </svg>
+      </button>
+      <a href="index.html#pricing" class="btn-primary">Essai gratuit</a>
+    </div>
+  </div>
+</nav>
+
+<div class="article-hero">
+  <div class="article-hero-inner">
+    <div class="article-breadcrumb">
+      <a href="index.html">Accueil</a>
+      <span>›</span>
+      <a href="blog.html">Blog</a>
+      <span>›</span>
+      <span>Encaissement</span>
+    </div>
+    <div><span class="cat-badge">Encaissement</span></div>
+    <h1 class="article-title">Import CSV bancaire : comment automatiser votre comptabilité locative</h1>
+    <div class="article-meta">
+      <span>20 mars 2025</span>
+      <div class="article-meta-dot"></div>
+      <span>7 min de lecture</span>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="article-layout">
+    <article>
+      <div class="article-body">
+
+<p>Chaque mois, des milliers de propriétaires passent des heures à vérifier manuellement qui a payé son loyer. L'import CSV bancaire automatise entièrement cette tâche. Voici comment ça marche.</p>
+
+<h2>Pourquoi le CSV et pas le prélèvement automatique ?</h2>
+<p>Le prélèvement automatique est théoriquement idéal, mais en pratique :</p>
+<ul>
+  <li>De nombreux locataires refusent de donner leur RIB</li>
+  <li>Les rejets de prélèvement entraînent des frais bancaires</li>
+  <li>La mise en place prend du temps administrativement</li>
+</ul>
+<p>Le virement bancaire avec import CSV offre un bon équilibre : le locataire garde le contrôle sur ses paiements, et vous automatisez la réconciliation.</p>
+
+<h2>Étape 1 : Standardiser les libellés de virement</h2>
+<p>La clé d'un matching automatique efficace, c'est la cohérence des libellés. Demandez à chaque locataire d'utiliser un libellé standardisé pour ses virements :</p>
+<p><strong>Format recommandé : [NOM PRÉNOM] - BOX [NUMÉRO]</strong></p>
+<p>Exemple : <em>DUPONT MARIE - BOX A7</em></p>
+<p>Intégrez cette instruction dans le bail lui-même.</p>
+
+<h2>Étape 2 : Exporter le relevé CSV depuis votre banque</h2>
+<p>Toutes les grandes banques françaises proposent l'export CSV ou OFX. La procédure varie selon l'établissement :</p>
+<ul>
+  <li><strong>BNP Paribas</strong> : Mes comptes > Télécharger > Format CSV</li>
+  <li><strong>Crédit Agricole</strong> : Consultation des opérations > Exporter</li>
+  <li><strong>Société Générale</strong> : Mes comptes > Relevé de compte > Exporter</li>
+  <li><strong>Boursorama / N26 / Revolut</strong> : Export disponible dans les paramètres du compte</li>
+</ul>
+<div class="tip-box"><div class="tip-label">Fréquence recommandée</div>Importez votre CSV le 10 de chaque mois (quelques jours après l'échéance du loyer). Vous aurez une vue complète et pourrez relancer rapidement les retardataires.</div>
+
+<h2>Étape 3 : Importer dans Boxmanager</h2>
+<p>Dans Boxmanager, rendez-vous dans <strong>Loyers & Paiements > Importer un relevé</strong>. Sélectionnez votre fichier CSV. Le logiciel analyse chaque ligne et propose un matching pour chaque transaction :</p>
+<ul>
+  <li><strong>Match automatique</strong> : le montant et le libellé correspondent à un locataire</li>
+  <li><strong>Match partiel</strong> : le montant correspond mais le libellé est ambigu — vous validez manuellement</li>
+  <li><strong>Aucun match</strong> : transaction non identifiée (virement d'un tiers, autre dépense)</li>
+</ul>
+
+<h2>Étape 4 : Traiter les exceptions</h2>
+<p>Les cas non matchés automatiquement sont rares si les libellés sont bien standardisés. Pour chaque exception, Boxmanager vous propose les locataires possibles triés par probabilité. Validez en 1 clic.</p>
+
+<h2>Résultat : votre tableau de bord en temps réel</h2>
+<p>Après import, votre tableau de bord affiche instantanément : loyers encaissés, loyers en attente, locataires en retard, montant total des impayés. Les relances automatiques sont déclenchées selon votre paramétrage.</p>
+
+<blockquote>L'import CSV transforme une tâche mensuelle de 2 heures en 5 minutes de validation. C'est l'une des fonctionnalités les plus impactantes pour les propriétaires actifs.</blockquote>
+    
+      </div>
+      <div style="margin-top:56px;padding-top:32px;border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;">
+        <a href="blog.html" style="font-size:14px;color:var(--text-muted);display:flex;align-items:center;gap:6px;text-decoration:none;" onmouseover="this.style.color='var(--green)'" onmouseout="this.style.color='var(--text-muted)'">← Retour au blog</a>
+        <a href="index.html#pricing" class="btn-primary">Essayer Boxmanager gratuitement</a>
+      </div>
+    </article>
+    <aside class="article-sidebar">
+      <div class="cta-sidebar">
+        <h3>Essayez Boxmanager</h3>
+        <p>Gérez vos box et garages en location — baux, paiements, relances — depuis une seule interface.</p>
+        <a href="index.html#pricing" class="btn-primary" style="width:100%;justify-content:center;">Démarrer gratuitement</a>
+      </div>
+      <div class="sidebar-block" style="margin-top:0">
+        <div class="sidebar-block-title">Articles récents</div>
+        <a href="article-1.html" class="related-link"><div class="related-link-dot"></div><div class="related-link-title">Guide complet : gérer ses box et garages en location en 2025</div></a><a href="article-2.html" class="related-link"><div class="related-link-dot"></div><div class="related-link-title">Bail de garage et box : ce que dit la loi en 2025</div></a><a href="article-3.html" class="related-link"><div class="related-link-dot"></div><div class="related-link-title">Comment réduire les impayés de loyer dans vos box</div></a><a href="article-4.html" class="related-link"><div class="related-link-dot"></div><div class="related-link-title">Investir dans des box de stockage : guide du débutant</div></a><a href="article-5.html" class="related-link"><div class="related-link-dot"></div><div class="related-link-title">Fiscalité des loyers de box et garages : le guide 2025</div></a>
+      </div>
+    </aside>
+  </div>
+</div>
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <a href="index.html" class="footer-logo-sm">
+        <svg width="22" height="22" viewBox="0 0 200 200" fill="none"><rect width="200" height="200" rx="44" fill="#16a34a"/><rect x="38" y="46" width="22" height="108" fill="white"/><rect x="140" y="46" width="22" height="108" fill="white"/><rect x="38" y="46" width="124" height="22" fill="white"/><rect x="60" y="104" width="80" height="14" fill="white"/><rect x="60" y="128" width="80" height="14" fill="white"/></svg>
+        <span><span>Box</span>manager</span>
+      </a>
+      <div class="footer-links">
+        <a href="index.html">Accueil</a><a href="blog.html">Blog</a><a href="index.html#pricing">Tarifs</a>
+      </div>
+    </div>
+    <p class="footer-copy">© 2025 Boxmanager. Tous droits réservés.</p>
+  </div>
+</footer>
+<script>
+const html=document.documentElement;
+const btn=document.getElementById('themeToggle');
+const icon=document.getElementById('themeIcon');
+const moonP=`<circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>`;
+const sunP=`<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>`;
+let t=localStorage.getItem('bm-theme')||'dark';
+function applyT(v){html.setAttribute('data-theme',v);icon.innerHTML=v==='dark'?moonP:sunP;localStorage.setItem('bm-theme',v);}
+applyT(t); btn.addEventListener('click',()=>{t=t==='dark'?'light':'dark';applyT(t);});
+const obs=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible');}),{threshold:0.1});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+</script>
+</body>
+</html>
