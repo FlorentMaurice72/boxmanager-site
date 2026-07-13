@@ -1,7 +1,7 @@
-# Handoff: Boxmanager — Site marketing + Blog
+# Handoff: Boxgestion — Site marketing + Blog
 
 ## Overview
-Boxmanager est un logiciel SaaS de gestion locative spécialisé pour les propriétaires de boxes de stockage et garages. Ce package contient le design complet du site marketing (landing page) et du blog, prêt à être implémenté dans un framework front-end moderne pour un déploiement Vercel.
+Boxgestion est un logiciel SaaS de gestion locative spécialisé pour les propriétaires de boxes de stockage et garages. Ce package contient le design complet du site marketing (landing page) et du blog, prêt à être implémenté dans un framework front-end moderne pour un déploiement Vercel.
 
 ## About the Design Files
 Les fichiers HTML dans ce bundle sont des **références de design** — des prototypes haute-fidélité montrant l'apparence finale et les comportements attendus. Ils ne sont **pas du code de production** à copier directement.
@@ -16,7 +16,7 @@ La mission du développeur est de **recréer ces designs dans un environnement d
 ## Architecture recommandée (Next.js)
 
 ```
-boxmanager/
+boxgestion/
 ├── app/
 │   ├── page.tsx                    # Landing page (index.html)
 │   ├── blog/
@@ -121,7 +121,7 @@ Voir fichier `index.html` pour les détails exacts de chaque section.
 ### 3. Article individuel (`app/blog/[slug]/page.tsx`)
 
 - Layout 2 colonnes : article (flex 1) + sidebar 280px
-- Sidebar : CTA Boxmanager + liste articles récents
+- Sidebar : CTA Boxgestion + liste articles récents
 - Corps : typographie article avec h2/h3, blockquotes, tip-boxes
 - Breadcrumb : Accueil › Blog › Catégorie
 
@@ -292,7 +292,7 @@ Pricing featured: 0 24px 60px rgba(22,163,74,0.15)
 | article-6.html | Trouver et sélectionner de bons locataires | Guide | 9 min |
 | article-7.html | Trouver et acheter des box rentables | Investissement | 13 min |
 | article-8.html | Import CSV : automatiser la comptabilité | Encaissement | 7 min |
-| article-9.html | Boxmanager v2 : nouveautés mai 2025 | Boxmanager | 5 min |
+| article-9.html | Boxgestion v2 : nouveautés mai 2025 | Boxgestion | 5 min |
 | article-10.html | Optimiser le taux d'occupation | Guide | 10 min |
 
 Contenu complet dans chaque fichier HTML — à migrer en MDX pour Next.js.
@@ -311,7 +311,7 @@ Contenu complet dans chaque fichier HTML — à migrer en MDX pour Next.js.
 
 ```bash
 # Init projet Next.js
-npx create-next-app@latest boxmanager --typescript --tailwind --app
+npx create-next-app@latest boxgestion --typescript --tailwind --app
 
 # Install dépendances suggérées
 npm install framer-motion           # Animations scroll reveal + compteurs
@@ -320,14 +320,14 @@ npm install next-mdx-remote         # Articles de blog en MDX
 npm install sharp                   # Optimisation images
 
 # Variables d'environnement Vercel
-NEXT_PUBLIC_SITE_URL=https://boxmanager.fr
+NEXT_PUBLIC_SITE_URL=https://boxgestion.fr
 ```
 
 ## SEO
 Chaque page doit avoir :
 ```tsx
 export const metadata = {
-  title: 'Page Title — Boxmanager',
+  title: 'Page Title — Boxgestion',
   description: '...',
   openGraph: { ... },
 }
